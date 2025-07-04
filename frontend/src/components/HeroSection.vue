@@ -1,9 +1,14 @@
 <template>
   <section id="home" class="hero">
     <div class="overlay">
-      <h1 class="title">Hi, I'm John Doe</h1>
-      <p class="subtitle">A Passionate Frontend Developer</p>
-      <button class="cta" @click="scrollToContact">Let's Work Together</button>
+      <div class="profile-image">
+        <img src="@/assets/profile.jpg" alt="John Doe" class="profile-pic" />
+      </div>
+      <div class="text-content">
+        <h1 class="title">Hallo, Saya Nandana Zada Abiproya</h1>
+        <p class="subtitle">Fullstack Developer</p>
+        <button class="cta" @click="scrollToContact">About Me</button>
+      </div>
     </div>
   </section>
 </template>
@@ -20,7 +25,8 @@ const scrollToContact = () => {
 .hero {
   position: relative;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('@/assets/hero.jpg') no-repeat center center/cover;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 64, 128, 0.7));
+
   background-attachment: fixed;
   display: flex;
   align-items: center;
@@ -31,17 +37,36 @@ const scrollToContact = () => {
 
 .overlay {
   text-align: center;
-  backdrop-filter: blur(5px);
   padding: 30px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   animation: float 4s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #4CAF50;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.text-content {
+  padding: 0 20px;
 }
 
 .title {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 15px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -49,16 +74,15 @@ const scrollToContact = () => {
 }
 
 .subtitle {
-  font-size: 1.8rem;
-  margin-bottom: 40px;
-  font-style: italic;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
   color: #d3d3d3;
   animation: fadeInUp 2s ease-out;
 }
 
 .cta {
   background-color: #4caf50;
-  padding: 15px 40px;
+  padding: 12px 30px;
   font-size: 1.2rem;
   border: none;
   color: white;
@@ -71,8 +95,13 @@ const scrollToContact = () => {
 
 .cta:hover {
   background-color: #45a049;
-  transform: scale(1.15) rotate(2deg);
+  transform: scale(1.1);
   box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes fadeInDown {
@@ -91,7 +120,6 @@ const scrollToContact = () => {
   100% { transform: translateY(0); }
 }
 
-/* Responsivitas */
 @media (max-width: 768px) {
   .title {
     font-size: 2.5rem;
@@ -100,8 +128,12 @@ const scrollToContact = () => {
     font-size: 1.3rem;
   }
   .cta {
-    padding: 12px 30px;
+    padding: 10px 25px;
     font-size: 1rem;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
   }
 }
 </style>

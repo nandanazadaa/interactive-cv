@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="navbar-container">
-      <div class="logo">MyPortfolio</div>
+      <div class="logo">NANDANA ZADA ABIPROYA</div>
       <div class="menu-toggle" @click="isOpen = !isOpen">
         <span class="bar"></span>
         <span class="bar"></span>
